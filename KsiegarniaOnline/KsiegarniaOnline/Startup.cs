@@ -11,6 +11,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using KsiegarniaOnline.DataAccess;
+using Microsoft.EntityFrameworkCore;
+using MediatR;
+using KsiegarniaOnline.ApplicationServices.API.Domain;
+using KsiegarniaOnline.ApplicationServices.Mappings;
+using KsiegarniaOnline.DataAccess.CQRS;
 
 namespace KsiegarniaOnline
 {
@@ -26,6 +32,15 @@ namespace KsiegarniaOnline
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddTransient<ICommandExecutor, CommandExecutor>();
+            services.AddTransient<IQueryExecutor, QueryExecutor>();
+
+            services.AddAutoMapper(typeof(ProductsProfile).Assembly);
+
+            services.AddMediatR(typeof(ResponseBase<>));
+
+            services.AddDbContext<BookstoreContext>(
+               opt => opt.UseSqlServer(this.Configuration.GetConnectionString("BookstoreDatabaseConnection")));
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
@@ -57,3 +72,5 @@ namespace KsiegarniaOnline
         }
     }
 }
+            
+

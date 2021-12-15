@@ -1,0 +1,15 @@
+C:\Repos\github\KsiegarniaOnline\KsiegarniaOnline\KsiegarniaOnline.ApplicationServices\bin\Debug\net5.0\KsiegarniaOnline.ApplicationServices.deps.json
+C:\Repos\github\KsiegarniaOnline\KsiegarniaOnline\KsiegarniaOnline.ApplicationServices\bin\Debug\net5.0\KsiegarniaOnline.ApplicationServices.dll
+C:\Repos\github\KsiegarniaOnline\KsiegarniaOnline\KsiegarniaOnline.ApplicationServices\bin\Debug\net5.0\ref\KsiegarniaOnline.ApplicationServices.dll
+C:\Repos\github\KsiegarniaOnline\KsiegarniaOnline\KsiegarniaOnline.ApplicationServices\bin\Debug\net5.0\KsiegarniaOnline.ApplicationServices.pdb
+C:\Repos\github\KsiegarniaOnline\KsiegarniaOnline\KsiegarniaOnline.ApplicationServices\bin\Debug\net5.0\KsiegarniaOnline.DataAccess.dll
+C:\Repos\github\KsiegarniaOnline\KsiegarniaOnline\KsiegarniaOnline.ApplicationServices\bin\Debug\net5.0\KsiegarniaOnline.DataAccess.pdb
+C:\Repos\github\KsiegarniaOnline\KsiegarniaOnline\KsiegarniaOnline.ApplicationServices\obj\Debug\net5.0\KsiegarniaOnline.ApplicationServices.csproj.AssemblyReference.cache
+C:\Repos\github\KsiegarniaOnline\KsiegarniaOnline\KsiegarniaOnline.ApplicationServices\obj\Debug\net5.0\KsiegarniaOnline.ApplicationServices.GeneratedMSBuildEditorConfig.editorconfig
+C:\Repos\github\KsiegarniaOnline\KsiegarniaOnline\KsiegarniaOnline.ApplicationServices\obj\Debug\net5.0\KsiegarniaOnline.ApplicationServices.AssemblyInfoInputs.cache
+C:\Repos\github\KsiegarniaOnline\KsiegarniaOnline\KsiegarniaOnline.ApplicationServices\obj\Debug\net5.0\KsiegarniaOnline.ApplicationServices.AssemblyInfo.cs
+C:\Repos\github\KsiegarniaOnline\KsiegarniaOnline\KsiegarniaOnline.ApplicationServices\obj\Debug\net5.0\KsiegarniaOnline.ApplicationServices.csproj.CoreCompileInputs.cache
+C:\Repos\github\KsiegarniaOnline\KsiegarniaOnline\KsiegarniaOnline.ApplicationServices\obj\Debug\net5.0\KsiegarniaOnline.ApplicationServices.csproj.CopyComplete
+C:\Repos\github\KsiegarniaOnline\KsiegarniaOnline\KsiegarniaOnline.ApplicationServices\obj\Debug\net5.0\KsiegarniaOnline.ApplicationServices.dll
+C:\Repos\github\KsiegarniaOnline\KsiegarniaOnline\KsiegarniaOnline.ApplicationServices\obj\Debug\net5.0\ref\KsiegarniaOnline.ApplicationServices.dll
+C:\Repos\github\KsiegarniaOnline\KsiegarniaOnline\KsiegarniaOnline.ApplicationServices\obj\Debug\net5.0\KsiegarniaOnline.ApplicationServices.pdb

@@ -1,0 +1,15 @@
+C:\Repos\github\KsiegarniaOnline\KsiegarniaOnline\KsiegarniaOnline.DataAccess\bin\Debug\net5.0\KsiegarniaOnline.DataAccess.deps.json
+C:\Repos\github\KsiegarniaOnline\KsiegarniaOnline\KsiegarniaOnline.DataAccess\bin\Debug\net5.0\KsiegarniaOnline.DataAccess.dll
+C:\Repos\github\KsiegarniaOnline\KsiegarniaOnline\KsiegarniaOnline.DataAccess\bin\Debug\net5.0\ref\KsiegarniaOnline.DataAccess.dll
+C:\Repos\github\KsiegarniaOnline\KsiegarniaOnline\KsiegarniaOnline.DataAccess\bin\Debug\net5.0\KsiegarniaOnline.DataAccess.pdb
+C:\Repos\github\KsiegarniaOnline\KsiegarniaOnline\KsiegarniaOnline.DataAccess\obj\Debug\net5.0\KsiegarniaOnline.DataAccess.csproj.AssemblyReference.cache
+C:\Repos\github\KsiegarniaOnline\KsiegarniaOnline\KsiegarniaOnline.DataAccess\obj\Debug\net5.0\KsiegarniaOnline.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Repos\github\KsiegarniaOnline\KsiegarniaOnline\KsiegarniaOnline.DataAccess\obj\Debug\net5.0\KsiegarniaOnline.DataAccess.AssemblyInfoInputs.cache
+C:\Repos\github\KsiegarniaOnline\KsiegarniaOnline\KsiegarniaOnline.DataAccess\obj\Debug\net5.0\KsiegarniaOnline.DataAccess.AssemblyInfo.cs
+C:\Repos\github\KsiegarniaOnline\KsiegarniaOnline\KsiegarniaOnline.DataAccess\obj\Debug\net5.0\KsiegarniaOnline.DataAccess.csproj.CoreCompileInputs.cache
+C:\Repos\github\KsiegarniaOnline\KsiegarniaOnline\KsiegarniaOnline.DataAccess\obj\Debug\net5.0\KsiegarniaOnline.DataAccess.dll
+C:\Repos\github\KsiegarniaOnline\KsiegarniaOnline\KsiegarniaOnline.DataAccess\obj\Debug\net5.0\ref\KsiegarniaOnline.DataAccess.dll
+C:\Repos\github\KsiegarniaOnline\KsiegarniaOnline\KsiegarniaOnline.DataAccess\obj\Debug\net5.0\KsiegarniaOnline.DataAccess.pdb
+C:\Repos\github\KsiegarniaOnline\KsiegarniaOnline\KsiegarniaOnline.DataAccess\bin\Debug\net5.0\KsiegarniaOnline.DataAccess.runtimeconfig.json
+C:\Repos\github\KsiegarniaOnline\KsiegarniaOnline\KsiegarniaOnline.DataAccess\bin\Debug\net5.0\KsiegarniaOnline.DataAccess.runtimeconfig.dev.json
+C:\Repos\github\KsiegarniaOnline\KsiegarniaOnline\KsiegarniaOnline.DataAccess\obj\Debug\net5.0\KsiegarniaOnline.DataAccess.genruntimeconfig.cache
