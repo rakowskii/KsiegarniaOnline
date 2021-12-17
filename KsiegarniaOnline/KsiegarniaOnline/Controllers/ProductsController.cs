@@ -31,13 +31,13 @@ namespace KsiegarniaOnline.Controllers
         }
 
         [HttpGet]
-        [Route("GetById/{Id}")]
+        [Route("GetById/{id}")]
 
-        public async Task<IActionResult> GetProductById([FromRoute] int Id)
+        public async Task<IActionResult> GetProductById([FromRoute] int id)
         {
             var request = new GetProductByIdRequest()
             {
-                ProductsId = Id
+                ProductsId = id
             };
 
             var response = await mediator.Send(request);
@@ -180,12 +180,33 @@ namespace KsiegarniaOnline.Controllers
         }
 
         [HttpPost]
-        [Route("")]
+        [Route("AddProduct")]
         public async Task<IActionResult> AddProduct([FromBody] AddProductRequest request)
         {
             var product = await mediator.Send(request);
             return Ok(product);
 
+        }
+
+        [HttpDelete]
+        [Route("DeleteById/{productId}")]
+        public async Task<IActionResult> DeleteProduct([FromRoute] int productId)
+        {
+            var request = new DeleteProductByIdRequest()
+            {
+                Id = productId
+            };
+            var response = await mediator.Send(request);
+            return Ok(response);
+        }
+
+        [HttpPut]
+        [Route("UpdateById/{productId}")]
+        public async Task<IActionResult> UpdateProduct( [FromRoute] int productId, [FromBody] UpdateProductRequest request)
+        {
+            productId = request.Id;
+            var response = await mediator.Send(request);
+            return Ok(response);
         }
 
     }

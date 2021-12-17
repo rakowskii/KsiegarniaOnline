@@ -35,7 +35,7 @@ namespace KsiegarniaOnline
             services.AddTransient<ICommandExecutor, CommandExecutor>();
             services.AddTransient<IQueryExecutor, QueryExecutor>();
 
-            services.AddAutoMapper(typeof(ProductsProfile).Assembly);
+            services.AddAutoMapper(typeof(ProductProfile).Assembly);
 
             services.AddMediatR(typeof(ResponseBase<>));
 

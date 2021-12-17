@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using KsiegarniaOnline.ApplicationServices.API.Domain.Models;
 using KsiegarniaOnline.ApplicationServices.API.Domain.ReviewRequests;
+using KsiegarniaOnline.ApplicationServices.API.Domain.ProductRequests;
 
 namespace KsiegarniaOnline.ApplicationServices.Mappings
 {
@@ -26,7 +27,20 @@ namespace KsiegarniaOnline.ApplicationServices.Mappings
                 .ForMember(x => x.AddDate, y => y.MapFrom(z => z.AddDate))
                 .ForMember(x => x.Reviews, y => y.MapFrom(z => z.Reviews));
 
-            
+            CreateMap<DeleteReviewByIdRequest, DataAccess.Entities.Review>()
+               .ForMember(x => x.Id, y => y.MapFrom(z => z.ReviewId));
+
+            CreateMap<UpdateReviewByIdRequest, DataAccess.Entities.Review>()
+                .ForMember(x => x.Id, y => y.MapFrom(z => z.Id))
+                .ForMember(x => x.UserId, y => y.MapFrom(z => z.UserId))
+                .ForMember(x => x.ProductId, y => y.MapFrom(z => z.ProductId))
+                .ForMember(x => x.Reviews, y => y.MapFrom(z => z.Reviews));
         }
     }
 }
+                
+               
+
+
+
+

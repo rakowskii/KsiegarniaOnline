@@ -14,7 +14,7 @@ using KsiegarniaOnline.ApplicationServices.API.Domain.ProductResponses;
 using KsiegarniaOnline.ApplicationServices.API.Domain.ProductRequests;
 
 
-namespace KsiegarniaOnline.ApplicationServices.API.Handlers
+namespace KsiegarniaOnline.ApplicationServices.API.Handlers.ProductHandlers
 {
     class AddReviewHandler : IRequestHandler<AddProductRequest, AddProductResponse>
     {

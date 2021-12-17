@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace KsiegarniaOnline.DataAccess.CQRS.Queries
 {
-    public class GetReviewByProductTitleQuery : QueryBase<List<Review>>
+    public class GetReviewByProductTitleAndCoverQuery : QueryBase<List<Review>>
     {
         public string Title { get; set; }
+        public Product.Covers Cover { get; set; }
         public override async Task<List<Review>> Execute(BookstoreContext context)
         {
-            var reviews = context.Reviews.Where(x => x.Products.Title == Title).ToListAsync();
+            var reviews = context.Reviews.Where(x => x.Products.Title == Title && x.Products.Cover == Cover).ToListAsync();
             return await reviews;
         }
     }

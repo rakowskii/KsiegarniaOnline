@@ -13,14 +13,14 @@ using KsiegarniaOnline.ApplicationServices.API.Domain.Models;
 
 
 
-namespace KsiegarniaOnline.ApplicationServices.API.Handlers
+namespace KsiegarniaOnline.ApplicationServices.API.Handlers.ProductHandlers
 {
-    public class GetProductsHandler : IRequestHandler<GetProductsRequest, GetProductsResponse>
+    public class GetAllProductsHandler : IRequestHandler<GetProductsRequest, GetProductsResponse>
     {
         private readonly IQueryExecutor queryExecutor;
         private readonly IMapper mapper;
 
-        public GetProductsHandler(IQueryExecutor queryExecutor, IMapper mapper)
+        public GetAllProductsHandler(IQueryExecutor queryExecutor, IMapper mapper)
         {
             this.queryExecutor = queryExecutor;
             this.mapper = mapper;

@@ -18,6 +18,8 @@ namespace KsiegarniaOnline.ApplicationServices.API.Domain.Models
 
         [DataType(DataType.Date)]
         public DateTime AddDate { get; set; }
+        public User Users { get; set; }
+        public Product Products { get; set; }
     }
 }
 

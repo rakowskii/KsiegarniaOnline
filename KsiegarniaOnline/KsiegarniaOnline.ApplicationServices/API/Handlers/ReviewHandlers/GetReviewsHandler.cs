@@ -23,7 +23,7 @@ namespace KsiegarniaOnline.ApplicationServices.API.Handlers
 
         public async Task<GetReviewsResponse> Handle(GetReviewsRequest request, CancellationToken cancellationToken)
         {
-            var query = new GetReviewsQuery();
+            var query = new GetAllReviewsQuery();
             var reviews = await queryExecutor.Execute(query);
             var mappedReviews = mapper.Map<List<Domain.Models.Review>>(reviews); 
             var response = new GetReviewsResponse

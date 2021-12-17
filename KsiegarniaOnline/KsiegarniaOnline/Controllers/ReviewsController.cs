@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using KsiegarniaOnline.ApplicationServices.API.Domain.ReviewRequests;
+using KsiegarniaOnline.DataAccess.Entities;
 
 namespace KsiegarniaOnline.Controllers
 {
@@ -42,12 +43,13 @@ namespace KsiegarniaOnline.Controllers
 
 
         [HttpGet]
-        [Route("GetByProductTitle/{title}")]
-        public async Task<IActionResult> GetReviewByProductTitle([FromRoute] string title)
+        [Route("GetByProductTitleAndCover/{title}/{cover}")]
+        public async Task<IActionResult> GetReviewByProductTitle([FromRoute] string title, Product.Covers cover)
         {
-            var request = new GetReviewByProductTitleRequest
+            var request = new GetReviewByProductTitleAndCoverRequest
             {
-                Title = title
+                Title = title,
+                Cover = cover
             };
             var response = await mediator.Send(request);
             return Ok(response);
@@ -67,10 +69,31 @@ namespace KsiegarniaOnline.Controllers
         }
 
         [HttpPost]
-        [Route("")]
+        [Route("AddReview")]
         public async Task<IActionResult> AddReview([FromBody] AddReviewRequest request)
         {
             
+            var response = await mediator.Send(request);
+            return Ok(response);
+        }
+
+        [HttpPut]
+        [Route("UpdateById/{reviewId}")]
+        public async Task<IActionResult> UpdateReview([FromRoute] int reviewId ,[FromBody] UpdateReviewByIdRequest request)
+        {
+            reviewId = request.Id;
+            var response = await mediator.Send(request);
+            return Ok(response);
+        }
+
+        [HttpDelete]
+        [Route("DeleteById/{reviewId}")]
+        public async Task<IActionResult> DeleteReview([FromRoute] int reviewId)
+        {
+            var request = new DeleteReviewByIdRequest
+            {
+                ReviewId = reviewId
+            };
             var response = await mediator.Send(request);
             return Ok(response);
         }

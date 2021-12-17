@@ -10,13 +10,12 @@ namespace KsiegarniaOnline.ApplicationServices.API.Domain.Models
 {
     public class User
     {
-        [Required]
-        [MaxLength(50)]
+        public int Id { get; set; }
         public string Login { get; set; }
-
-        [Required]
-        [MaxLength(50)]
         public string Password { get; set; }
         public Role Roles { get; set; }
     }
 }
+
+      
+        

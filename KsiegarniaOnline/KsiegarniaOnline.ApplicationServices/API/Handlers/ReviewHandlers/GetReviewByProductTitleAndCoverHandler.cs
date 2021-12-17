@@ -10,26 +10,28 @@ using System.Threading.Tasks;
 
 namespace KsiegarniaOnline.ApplicationServices.API.Handlers
 {
-    public class GetReviewByProductTitleHandler : IRequestHandler<GetReviewByProductTitleRequest, GetReviewByProductTitleResponse>
+    public class GetReviewByProductTitleAndCoverHandler : IRequestHandler<GetReviewByProductTitleAndCoverRequest, GetReviewByProductTitleAndCoverResponse>
     {
         private readonly IQueryExecutor queryExecutor;
         private readonly IMapper mapper;
 
-        public GetReviewByProductTitleHandler(IQueryExecutor queryExecutor, IMapper mapper)
+        public GetReviewByProductTitleAndCoverHandler(IQueryExecutor queryExecutor, IMapper mapper)
         {
             this.queryExecutor = queryExecutor;
             this.mapper = mapper;
         }
 
-        public async Task<GetReviewByProductTitleResponse> Handle(GetReviewByProductTitleRequest request, CancellationToken cancellationToken)
+        public async Task<GetReviewByProductTitleAndCoverResponse> Handle(GetReviewByProductTitleAndCoverRequest request, CancellationToken cancellationToken)
         {
-            var query = new GetReviewByProductTitleQuery
+            var query = new GetReviewByProductTitleAndCoverQuery
             {
-                Title = request.Title
+                Title = request.Title,
+                Cover = request.Cover
+                
             };
             var reviews = await queryExecutor.Execute(query);
             var mappedReviews = mapper.Map<List<Domain.Models.Review>>(reviews);
-            var response = new GetReviewByProductTitleResponse
+            var response = new GetReviewByProductTitleAndCoverResponse
             {
                 Data = mappedReviews
             };

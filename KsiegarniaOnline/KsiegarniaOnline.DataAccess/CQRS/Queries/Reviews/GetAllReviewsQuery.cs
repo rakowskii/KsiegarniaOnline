@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace KsiegarniaOnline.DataAccess.CQRS.Queries
 {
-    public class GetReviewsQuery : QueryBase<List<Review>>
+    public class GetAllReviewsQuery : QueryBase<List<Review>>
     {
         public override Task<List<Review>> Execute(BookstoreContext context)
         {

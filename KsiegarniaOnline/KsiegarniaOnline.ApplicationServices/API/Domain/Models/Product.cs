@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using KsiegarniaOnline.DataAccess.Entities;
+﻿using System.Collections.Generic;
 using static KsiegarniaOnline.DataAccess.Entities.Product;
 
 namespace KsiegarniaOnline.ApplicationServices.API.Domain.Models
@@ -26,7 +20,7 @@ namespace KsiegarniaOnline.ApplicationServices.API.Domain.Models
         public Types Type { get; set; }
         public Categories Category { get; set; }
         public Covers Cover { get; set; }
-        public List<DataAccess.Entities.Review> Reviews { get; set; }
+        public List<Review> Reviews { get; set; }
 
     }
 }

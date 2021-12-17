@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace KsiegarniaOnline.ApplicationServices.API.Domain.ReviewResponses
 {
-    public class GetReviewByProductTitleResponse : ResponseBase<List<Review>>
+    public class GetReviewByProductTitleAndCoverResponse : ResponseBase<List<Review>>
     {
 
     }

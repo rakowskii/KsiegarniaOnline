@@ -19,8 +19,10 @@ namespace KsiegarniaOnline.DataAccess.Entities
 
     public enum Role
     {
-
+        Użytkownik,
+        Admin
     }
+
 
         
 

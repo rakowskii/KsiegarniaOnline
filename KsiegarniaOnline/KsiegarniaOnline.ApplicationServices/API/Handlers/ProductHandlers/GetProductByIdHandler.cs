@@ -12,7 +12,7 @@ using AutoMapper;
 using System.Threading;
 using KsiegarniaOnline.ApplicationServices.API.Domain.Models;
 
-namespace KsiegarniaOnline.ApplicationServices.API.Handlers
+namespace KsiegarniaOnline.ApplicationServices.API.Handlers.ProductHandlers
 {
     public class GetProductByIdHandler : IRequestHandler<GetProductByIdRequest, GetProductByIdResponse>
     {
