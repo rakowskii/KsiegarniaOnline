@@ -1,0 +1,15 @@
+C:\Repos\github\OnlineBookstore\OnlineBookstore\OnlineBookstore.ApplicationServices\bin\Debug\net5.0\OnlineBookstore.ApplicationServices.deps.json
+C:\Repos\github\OnlineBookstore\OnlineBookstore\OnlineBookstore.ApplicationServices\bin\Debug\net5.0\OnlineBookstore.ApplicationServices.dll
+C:\Repos\github\OnlineBookstore\OnlineBookstore\OnlineBookstore.ApplicationServices\bin\Debug\net5.0\ref\OnlineBookstore.ApplicationServices.dll
+C:\Repos\github\OnlineBookstore\OnlineBookstore\OnlineBookstore.ApplicationServices\bin\Debug\net5.0\OnlineBookstore.ApplicationServices.pdb
+C:\Repos\github\OnlineBookstore\OnlineBookstore\OnlineBookstore.ApplicationServices\bin\Debug\net5.0\OnlineBookstore.DataAccess.dll
+C:\Repos\github\OnlineBookstore\OnlineBookstore\OnlineBookstore.ApplicationServices\bin\Debug\net5.0\OnlineBookstore.DataAccess.pdb
+C:\Repos\github\OnlineBookstore\OnlineBookstore\OnlineBookstore.ApplicationServices\obj\Debug\net5.0\OnlineBookstore.ApplicationServices.csproj.AssemblyReference.cache
+C:\Repos\github\OnlineBookstore\OnlineBookstore\OnlineBookstore.ApplicationServices\obj\Debug\net5.0\OnlineBookstore.ApplicationServices.GeneratedMSBuildEditorConfig.editorconfig
+C:\Repos\github\OnlineBookstore\OnlineBookstore\OnlineBookstore.ApplicationServices\obj\Debug\net5.0\OnlineBookstore.ApplicationServices.AssemblyInfoInputs.cache
+C:\Repos\github\OnlineBookstore\OnlineBookstore\OnlineBookstore.ApplicationServices\obj\Debug\net5.0\OnlineBookstore.ApplicationServices.AssemblyInfo.cs
+C:\Repos\github\OnlineBookstore\OnlineBookstore\OnlineBookstore.ApplicationServices\obj\Debug\net5.0\OnlineBookstore.ApplicationServices.csproj.CoreCompileInputs.cache
+C:\Repos\github\OnlineBookstore\OnlineBookstore\OnlineBookstore.ApplicationServices\obj\Debug\net5.0\OnlineBookstore.ApplicationServices.csproj.CopyComplete
+C:\Repos\github\OnlineBookstore\OnlineBookstore\OnlineBookstore.ApplicationServices\obj\Debug\net5.0\OnlineBookstore.ApplicationServices.dll
+C:\Repos\github\OnlineBookstore\OnlineBookstore\OnlineBookstore.ApplicationServices\obj\Debug\net5.0\ref\OnlineBookstore.ApplicationServices.dll
+C:\Repos\github\OnlineBookstore\OnlineBookstore\OnlineBookstore.ApplicationServices\obj\Debug\net5.0\OnlineBookstore.ApplicationServices.pdb
