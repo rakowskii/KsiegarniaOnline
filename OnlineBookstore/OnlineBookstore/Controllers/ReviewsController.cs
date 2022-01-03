@@ -6,96 +6,91 @@ using System.Linq;
 using System.Threading.Tasks;
 using OnlineBookstore.ApplicationServices.API.Domain.ReviewRequests;
 using OnlineBookstore.DataAccess.Entities;
+using OnlineBookstore.ApplicationServices.API.Domain.ProductRequests;
+using OnlineBookstore.ApplicationServices.API.Domain.ProductResponses;
+using OnlineBookstore.ApplicationServices.API.Domain.ReviewResponses;
 
 namespace OnlineBookstore.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class ReviewsController : ControllerBase
+    public class ReviewsController : ApiControllerBase
     {
-        private readonly IMediator mediator;
+        
 
-        public ReviewsController(IMediator mediator)
+        public ReviewsController(IMediator mediator) : base(mediator)
         {
-            this.mediator = mediator;
         }
 
         [HttpGet]
         [Route("GetAll")]
-        public async Task<IActionResult> GetAllReviews([FromQuery] GetReviewsRequest request)
+        public Task<IActionResult> GetAllReviews([FromQuery] GetReviewsRequest request)
         {
-            var response = await mediator.Send(request);
-            return Ok(response);
+            return this.HandleRequest<GetReviewsRequest, GetReviewsResponse>(request);
         }
 
         [HttpGet]
         [Route("GetByAddTime/{from}/{to}")]
-        public async Task<IActionResult> GetReviewByAddTime([FromRoute] DateTime from, DateTime to)
+        public Task<IActionResult> GetReviewByAddTime([FromRoute] DateTime from, DateTime to)
         {
             var request = new GetReviewByAddTimeRequest
             {
                 From = from, 
                 To = to
             };
-            var response = await mediator.Send(request);
-            return Ok(response);
+            return this.HandleRequest<GetReviewByAddTimeRequest, GetReviewByAddTimeResponse>(request);
         }
 
 
         [HttpGet]
         [Route("GetByProductTitleAndCover/{title}/{cover}")]
-        public async Task<IActionResult> GetReviewByProductTitle([FromRoute] string title, Product.Covers cover)
+        public Task<IActionResult> GetReviewByProductTitle([FromRoute] string title, Product.Covers cover)
         {
             var request = new GetReviewByProductTitleAndCoverRequest
             {
                 Title = title,
                 Cover = cover
             };
-            var response = await mediator.Send(request);
-            return Ok(response);
+            return this.HandleRequest<GetReviewByProductTitleAndCoverRequest, GetReviewByProductTitleAndCoverResponse>(request);
         }
 
 
         [HttpGet]
         [Route("GetByUserLogin/{login}")]
-        public async Task<IActionResult> GetReviewByUserLogin([FromRoute] string login)
+        public Task<IActionResult> GetReviewByUserLogin([FromRoute] string login)
         {
             var request = new GetReviewByUserLoginRequest
             {
                 Login = login
             };
-            var response = await mediator.Send(request);
-            return Ok(response);
+            return this.HandleRequest<GetReviewByUserLoginRequest, GetReviewByUserLoginResponse>(request);
         }
 
         [HttpPost]
         [Route("AddReview")]
-        public async Task<IActionResult> AddReview([FromBody] AddReviewRequest request)
+        public Task<IActionResult> AddReview([FromBody] AddReviewRequest request)
         {
-            
-            var response = await mediator.Send(request);
-            return Ok(response);
+
+            return this.HandleRequest<AddReviewRequest, AddReviewResponse>(request);
         }
 
         [HttpPut]
         [Route("UpdateById/{reviewId}")]
-        public async Task<IActionResult> UpdateReview([FromRoute] int reviewId ,[FromBody] UpdateReviewByIdRequest request)
+        public Task<IActionResult> UpdateReview([FromRoute] int reviewId ,[FromBody] UpdateReviewByIdRequest request)
         {
             reviewId = request.Id;
-            var response = await mediator.Send(request);
-            return Ok(response);
+            return this.HandleRequest<UpdateReviewByIdRequest, UpdateReviewByIdResponse>(request);
         }
 
         [HttpDelete]
         [Route("DeleteById/{reviewId}")]
-        public async Task<IActionResult> DeleteReview([FromRoute] int reviewId)
+        public Task<IActionResult> DeleteReview([FromRoute] int reviewId)
         {
             var request = new DeleteReviewByIdRequest
             {
                 ReviewId = reviewId
             };
-            var response = await mediator.Send(request);
-            return Ok(response);
+            return this.HandleRequest<DeleteReviewByIdRequest, DeleteReviewByIdResponse>(request);
         }
 
 

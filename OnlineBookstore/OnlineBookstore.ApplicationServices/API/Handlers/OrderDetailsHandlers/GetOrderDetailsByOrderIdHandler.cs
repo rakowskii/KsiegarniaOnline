@@ -10,6 +10,9 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using OnlineBookstore.ApplicationServices.API.Domain.OrderResponses;
+using OnlineBookstore.ApplicationServices.API.Domain;
+using OnlineBookstore.ApplicationServices.API.ErrorHandling;
 
 namespace OnlineBookstore.ApplicationServices.API.Handlers.OrderDetailsHandlers
 {
@@ -31,6 +34,13 @@ namespace OnlineBookstore.ApplicationServices.API.Handlers.OrderDetailsHandlers
                 OrderId = request.OrderId
             };
             var orderDetails = await queryExecutor.Execute(query);
+            if (orderDetails == null)
+            {
+                return new GetOrderDetailsByOrderIdResponse()
+                {
+                    Error = new ErrorModel(ErrorType.NotFound)
+                };
+            }
             var mappedOrderDetails = mapper.Map<List<Domain.Models.OrderDetail>>(orderDetails);
             return new GetOrderDetailsByOrderIdResponse
             {

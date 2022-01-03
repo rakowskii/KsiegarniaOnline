@@ -13,7 +13,10 @@ namespace OnlineBookstore.DataAccess.CQRS.Queries.Products
         public string Series { get; set; }
         public override async Task<List<Product>> Execute(BookstoreContext context)
         {
-            var products = context.Products.Where(x => x.Series == Series).ToListAsync();
+            var products = context.Products
+                .Where(x => x.Series == Series)
+                .Include(x => x.Reviews)
+                .ToListAsync();
             return await products;
         }
     }

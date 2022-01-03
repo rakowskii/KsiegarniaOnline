@@ -12,7 +12,9 @@ namespace OnlineBookstore.DataAccess.CQRS.Queries
     {
         public override Task<List<Product>> Execute(BookstoreContext context)
         {
-            return  context.Products.ToListAsync();
+            return  context.Products
+                .Include(x => x.Reviews)
+                .ToListAsync();
         }
     }
 }

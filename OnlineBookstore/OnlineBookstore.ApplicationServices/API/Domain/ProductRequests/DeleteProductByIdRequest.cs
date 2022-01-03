@@ -12,5 +12,6 @@ namespace OnlineBookstore.ApplicationServices.API.Domain.ProductRequests
    public class DeleteProductByIdRequest : IRequest<DeleteProductByIdResponse>
     {
         public int Id { get; set; }
+        
     }
 }

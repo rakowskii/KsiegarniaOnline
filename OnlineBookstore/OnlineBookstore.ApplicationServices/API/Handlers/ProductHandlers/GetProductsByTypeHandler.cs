@@ -9,6 +9,8 @@ using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
+using OnlineBookstore.ApplicationServices.API.Domain;
+using OnlineBookstore.ApplicationServices.API.ErrorHandling;
 
 namespace OnlineBookstore.ApplicationServices.API.Handlers.ProductHandlers
 {
@@ -30,6 +32,13 @@ namespace OnlineBookstore.ApplicationServices.API.Handlers.ProductHandlers
             };
 
             var products = await queryExecutor.Execute(query);
+            if (products == null)
+            {
+                return new GetProductByTypeResponse()
+                {
+                    Error = new ErrorModel(ErrorType.NotFound)
+                };
+            }
             var mappedProducts = mapper.Map<List<Product>>(products);
 
             return new GetProductByTypeResponse

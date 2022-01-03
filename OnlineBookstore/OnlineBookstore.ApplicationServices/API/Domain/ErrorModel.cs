@@ -6,9 +6,12 @@ using System.Threading.Tasks;
 
 namespace OnlineBookstore.ApplicationServices.API.Domain
 {
-    public abstract class ResponseBase<T> : ErrorResponseBase
+    public class ErrorModel
     {
-        public T Data { get; set; }
-
+        public string Error { get; }
+        public ErrorModel(string error)
+        {
+            this.Error = error;
+        }
     }
 }

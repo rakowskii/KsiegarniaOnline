@@ -17,6 +17,8 @@ using MediatR;
 using OnlineBookstore.ApplicationServices.API.Domain;
 using OnlineBookstore.ApplicationServices.Mappings;
 using OnlineBookstore.DataAccess.CQRS;
+using FluentValidation.AspNetCore;
+using OnlineBookstore.ApplicationServices.API.Validators;
 
 namespace OnlineBookstore
 {
@@ -32,6 +34,14 @@ namespace OnlineBookstore
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddMvcCore()
+                .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<AddProductRequestValidator>());
+
+            services.Configure<ApiBehaviorOptions>(options =>
+            {
+                options.SuppressModelStateInvalidFilter = true;
+            });
+
             services.AddTransient<ICommandExecutor, CommandExecutor>();
             services.AddTransient<IQueryExecutor, QueryExecutor>();
 

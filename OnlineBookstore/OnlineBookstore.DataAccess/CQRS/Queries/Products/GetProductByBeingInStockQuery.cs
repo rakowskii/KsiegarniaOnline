@@ -11,7 +11,10 @@ namespace OnlineBookstore.DataAccess.CQRS.Queries.Products
 
         public async override Task<List<Product>> Execute(BookstoreContext context)
         {
-            var products = context.Products.Where(x => x.InStock).ToListAsync();
+            var products = context.Products
+                .Where(x => x.InStock)
+                .Include(x => x.Reviews)
+                .ToListAsync();
             return await products;
         }
     }

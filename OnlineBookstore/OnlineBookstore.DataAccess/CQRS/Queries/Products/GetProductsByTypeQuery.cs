@@ -11,7 +11,10 @@ namespace OnlineBookstore.DataAccess.CQRS.Queries.Products
         public Product.Types Type { get; set; }
         public async override Task<List<Product>> Execute(BookstoreContext context)
         {
-            var products = context.Products.Where(x => x.Type == Type).ToListAsync();
+            var products = context.Products
+                .Where(x => x.Type == Type)
+                .Include(x => x.Reviews)
+                .ToListAsync();
             return await products;
         }
     }

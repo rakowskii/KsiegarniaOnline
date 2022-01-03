@@ -6,6 +6,8 @@ using OnlineBookstore.DataAccess.CQRS.Queries.Users;
 using MediatR;
 using System.Threading;
 using System.Threading.Tasks;
+using OnlineBookstore.ApplicationServices.API.Domain;
+using OnlineBookstore.ApplicationServices.API.ErrorHandling;
 
 namespace OnlineBookstore.ApplicationServices.API.Handlers.UserHandlers
 {
@@ -26,6 +28,13 @@ namespace OnlineBookstore.ApplicationServices.API.Handlers.UserHandlers
                 Id = request.UserId
             };
             var user = await queryExecutor.Execute(query);
+            if (user == null)
+            {
+                return new GetUserByIdResponse()
+                {
+                    Error = new ErrorModel(ErrorType.NotFound)
+                };
+            }
             var mappedUser = mapper.Map<Domain.Models.User>(user);
             return new GetUserByIdResponse
             {

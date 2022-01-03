@@ -7,6 +7,9 @@ using MediatR;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
+using OnlineBookstore.ApplicationServices.API.Domain.ReviewResponses;
+using OnlineBookstore.ApplicationServices.API.Domain;
+using OnlineBookstore.ApplicationServices.API.ErrorHandling;
 
 namespace OnlineBookstore.ApplicationServices.API.Handlers.UserHandlers
 {
@@ -24,6 +27,13 @@ namespace OnlineBookstore.ApplicationServices.API.Handlers.UserHandlers
         {
             var query = new GetAllUsersQuery();
             var user = await queryExecutor.Execute(query);
+            if (user == null)
+            {
+                return new GetAllUsersResponse()
+                {
+                    Error = new ErrorModel(ErrorType.NotFound)
+                };
+            }
             var mappedUser = mapper.Map<List<Domain.Models.User>>(user);
             return new GetAllUsersResponse
             {

@@ -12,3 +12,4 @@ C:\Repos\github\OnlineBookstore\OnlineBookstore\OnlineBookstore.DataAccess\obj\D
 C:\Repos\github\OnlineBookstore\OnlineBookstore\OnlineBookstore.DataAccess\obj\Debug\net5.0\ref\OnlineBookstore.DataAccess.dll
 C:\Repos\github\OnlineBookstore\OnlineBookstore\OnlineBookstore.DataAccess\obj\Debug\net5.0\OnlineBookstore.DataAccess.pdb
 C:\Repos\github\OnlineBookstore\OnlineBookstore\OnlineBookstore.DataAccess\obj\Debug\net5.0\OnlineBookstore.DataAccess.genruntimeconfig.cache
+C:\Repos\github\OnlineBookstore\OnlineBookstore\OnlineBookstore.DataAccess\obj\Debug\net5.0\OnlineBookstore.DataAccess.csproj.AssemblyReference.cache

@@ -10,6 +10,8 @@ using OnlineBookstore.ApplicationServices.API.Domain.ProductResponses;
 using OnlineBookstore.DataAccess;
 using OnlineBookstore.DataAccess.CQRS.Queries.Products;
 using MediatR;
+using OnlineBookstore.ApplicationServices.API.Domain;
+using OnlineBookstore.ApplicationServices.API.ErrorHandling;
 
 namespace OnlineBookstore.ApplicationServices.API.Handlers.ProductHandlers
 {
@@ -31,6 +33,13 @@ namespace OnlineBookstore.ApplicationServices.API.Handlers.ProductHandlers
                 Publisher = request.Publisher
             };
             var product = await queryExecutor.Execute(query);
+            if (product == null)
+            {
+                return new GetProductByPublisherResponse()
+                {
+                    Error = new ErrorModel(ErrorType.NotFound)
+                };
+            }
             var mappedProduct = mapper.Map<List<Domain.Models.Product>>(product);
             return new GetProductByPublisherResponse
             {

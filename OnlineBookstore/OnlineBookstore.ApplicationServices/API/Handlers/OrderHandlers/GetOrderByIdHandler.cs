@@ -6,6 +6,9 @@ using OnlineBookstore.DataAccess.CQRS.Queries.Orders;
 using MediatR;
 using System.Threading;
 using System.Threading.Tasks;
+using OnlineBookstore.ApplicationServices.API.Domain.ProductResponses;
+using OnlineBookstore.ApplicationServices.API.Domain;
+using OnlineBookstore.ApplicationServices.API.ErrorHandling;
 
 namespace OnlineBookstore.ApplicationServices.API.Handlers.OrderHandlers
 {
@@ -27,6 +30,13 @@ namespace OnlineBookstore.ApplicationServices.API.Handlers.OrderHandlers
                 OrderId = request.OrderId
             };
             var order = await queryExecutor.Execute(query);
+            if (order == null)
+            {
+                return new GetOrderByIdResponse()
+                {
+                    Error = new ErrorModel(ErrorType.NotFound)
+                };
+            }
             var mappedOrder = mapper.Map<Domain.Models.Order>(order);
             return new GetOrderByIdResponse
             {

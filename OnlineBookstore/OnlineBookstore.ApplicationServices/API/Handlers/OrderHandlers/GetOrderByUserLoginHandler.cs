@@ -7,6 +7,8 @@ using MediatR;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using OnlineBookstore.ApplicationServices.API.Domain;
+using OnlineBookstore.ApplicationServices.API.ErrorHandling;
 
 namespace OnlineBookstore.ApplicationServices.API.Handlers.OrderHandlers
 {
@@ -28,6 +30,13 @@ namespace OnlineBookstore.ApplicationServices.API.Handlers.OrderHandlers
                 Login = request.UserLogin
             };
             var order = await queryExecutor.Execute(query);
+            if (order == null)
+            {
+                return new GetOrderByUserLoginResponse()
+                {
+                    Error = new ErrorModel(ErrorType.NotFound)
+                };
+            }
             var mappedOrder = mapper.Map<List<Domain.Models.Order>>(order);
             return new GetOrderByUserLoginResponse
             {

@@ -18,17 +18,26 @@ namespace OnlineBookstore.DataAccess.CQRS.Queries.Products
             
             if(PriceFrom < PriceTo)
             {
-                var products = context.Products.Where(x => x.Price >= PriceFrom && x.Price <= PriceTo).ToListAsync();
+                var products = context.Products
+                    .Where(x => x.Price >= PriceFrom && x.Price <= PriceTo)
+                    .Include(x => x.Reviews)
+                    .ToListAsync();
                 return await products;
             }
             else if(PriceFrom > PriceTo)
             {
-                var products = context.Products.Where(x => x.Price <= PriceFrom && x.Price >= PriceTo).ToListAsync();
+                var products = context.Products
+                    .Where(x => x.Price <= PriceFrom && x.Price >= PriceTo)
+                    .Include(x => x.Reviews)
+                    .ToListAsync();
                 return await products;
             }
             else
             {
-                var products = context.Products.Where(x => x.Price == PriceFrom).ToListAsync();
+                var products = context.Products
+                    .Where(x => x.Price == PriceFrom)
+                    .Include(x => x.Reviews)
+                    .ToListAsync();
                 return await products;
             }
         }

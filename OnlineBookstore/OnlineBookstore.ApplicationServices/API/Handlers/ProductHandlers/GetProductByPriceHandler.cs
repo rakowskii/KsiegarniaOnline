@@ -11,6 +11,9 @@ using System.Threading;
 using OnlineBookstore.DataAccess;
 using OnlineBookstore.DataAccess.CQRS.Queries.Products;
 using OnlineBookstore.ApplicationServices.API.Domain.Models;
+using OnlineBookstore.ApplicationServices.API.Domain;
+using OnlineBookstore.ApplicationServices.API.ErrorHandling;
+using OnlineBookstore.DataAccess.Entities;
 
 namespace OnlineBookstore.ApplicationServices.API.Handlers.ProductHandlers
 {
@@ -33,9 +36,16 @@ namespace OnlineBookstore.ApplicationServices.API.Handlers.ProductHandlers
                 PriceTo = request.PriceTo
             };
             var productsFromDb = await queryExecutor.Execute(query);
+            if (productsFromDb == null)
+            {
+                return new GetProductByPriceResponse()
+                {
+                    Error = new ErrorModel(ErrorType.NotFound)
+                };
+            }
             var response = new GetProductByPriceResponse
             {
-                Data = mapper.Map<List<Product>>(productsFromDb)
+                Data = mapper.Map<List<Domain.Models.Product>>(productsFromDb)
             };
             return response;
         }

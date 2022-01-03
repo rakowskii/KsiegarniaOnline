@@ -51,6 +51,7 @@ namespace OnlineBookstore.ApplicationServices.Mappings
 
             CreateMap<DeleteProductByIdRequest, DataAccess.Entities.Product>()
                 .ForMember(x => x.Id, y => y.MapFrom(z => z.Id));
+               
 
 
             CreateMap<UpdateProductRequest, DataAccess.Entities.Product>()

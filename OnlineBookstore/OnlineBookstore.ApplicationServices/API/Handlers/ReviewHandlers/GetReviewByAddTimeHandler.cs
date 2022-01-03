@@ -7,6 +7,9 @@ using MediatR;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
+using OnlineBookstore.ApplicationServices.API.Domain.ProductResponses;
+using OnlineBookstore.ApplicationServices.API.Domain;
+using OnlineBookstore.ApplicationServices.API.ErrorHandling;
 
 namespace OnlineBookstore.ApplicationServices.API.Handlers
 {
@@ -29,6 +32,13 @@ namespace OnlineBookstore.ApplicationServices.API.Handlers
                 To = request.To
             };
             var reviews = await queryExecutor.Execute(query);
+            if (reviews == null)
+            {
+                return new GetReviewByAddTimeResponse()
+                {
+                    Error = new ErrorModel(ErrorType.NotFound)
+                };
+            }
             var mappedReviews = mapper.Map<List<Domain.Models.Review>>(reviews);
             var response = new GetReviewByAddTimeResponse
             {

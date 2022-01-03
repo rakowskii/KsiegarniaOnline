@@ -5,82 +5,85 @@ using System.Linq;
 using System.Threading.Tasks;
 using MediatR;
 using OnlineBookstore.ApplicationServices.API.Domain.OrderRequests;
+using OnlineBookstore.ApplicationServices.API.Domain.ReviewRequests;
+using OnlineBookstore.ApplicationServices.API.Domain.ReviewResponses;
+using OnlineBookstore.ApplicationServices.API.Domain.OrderResponses;
 
 namespace OnlineBookstore.Controllers
 {
     [ApiController]
     [Route("")]
-    public class OrdersController : ControllerBase
+    public class OrdersController : ApiControllerBase
     {
-        private readonly IMediator mediator;
+        
 
-        public OrdersController(IMediator mediator)
+        public OrdersController(IMediator mediator) : base(mediator)
         {
-            this.mediator = mediator;
         }
+            
 
         [HttpGet]
         [Route("GetAllOrders")]
-        public async Task<IActionResult> GetAllOrders([FromQuery] GetAllOrdersRequest request)
+        public Task<IActionResult> GetAllOrders([FromQuery] GetAllOrdersRequest request)
         {
-            var response = await mediator.Send(request);
-            return Ok(response);
+            return this.HandleRequest<GetAllOrdersRequest, GetAllOrdersResponse>(request);
         }
+
 
         [HttpGet]
         [Route("GetById/{id}")]
-        public async Task<IActionResult> GetOrderById([FromRoute] int id)
+        public Task<IActionResult> GetOrderById([FromRoute] int id)
         {
             var request = new GetOrderByIdRequest
             {
                 OrderId = id
             };
-            var response = await mediator.Send(request);
-            return Ok(response);
+            return this.HandleRequest<GetOrderByIdRequest, GetOrderByIdResponse>(request);
         }
+
 
         [HttpGet]
         [Route("GetByUserLogin/{login}")]
-        public async Task<IActionResult> GetOrderByUserLogin([FromRoute] string login)
+        public Task<IActionResult> GetOrderByUserLogin([FromRoute] string login)
         {
             var request = new GetOrderByUserLoginRequest
             {
                 UserLogin = login
             };
-            var response = await mediator.Send(request);
-            return Ok(response);
+            return this.HandleRequest<GetOrderByUserLoginRequest, GetOrderByUserLoginResponse>(request);
         }
+
 
         [HttpGet]
         [Route("GetByPlacedTime/{From}/{To}")]
-        public async Task<IActionResult> GetOrderByPlacedTime([FromRoute] DateTime from, DateTime to)
+        public Task<IActionResult> GetOrderByPlacedTime([FromRoute] DateTime from, DateTime to)
         {
             var request = new GetOrderByPlacedTimeRequest
             {
                 From = from,
                 To = to
             };
-            var response = await mediator.Send(request);
-            return Ok(response);
+            return this.HandleRequest<GetOrderByPlacedTimeRequest, GetOrderByPlacedTimeResponse>(request);
         }
+
 
         [HttpGet]
         [Route("GetByTotalPrice/{from}/{to}")]
-        public async Task<IActionResult> GetOrderByTotalPrice([FromRoute] decimal from, decimal to)
+        public Task<IActionResult> GetOrderByTotalPrice([FromRoute] decimal from, decimal to)
         {
             var request = new GetOrderByTotalPriceRequest
             {
                 From = from,
                 To = to
             };
-            var response = await mediator.Send(request);
-            return Ok(response);
+            return this.HandleRequest<GetOrderByTotalPriceRequest, GetOrderByTotalPriceResponse>(request);
         }
-
-        
-
-
     }
 }
        
+
+
+
+
+
 

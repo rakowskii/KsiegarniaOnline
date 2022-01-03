@@ -11,6 +11,9 @@ using OnlineBookstore.DataAccess;
 using OnlineBookstore.DataAccess.CQRS.Queries.Products;
 using MediatR;
 using OnlineBookstore.ApplicationServices.API.Domain.Models;
+using OnlineBookstore.ApplicationServices.API.Domain;
+using OnlineBookstore.ApplicationServices.API.ErrorHandling;
+using OnlineBookstore.DataAccess.Entities;
 
 namespace OnlineBookstore.ApplicationServices.API.Handlers.ProductHandlers
 {
@@ -27,12 +30,19 @@ namespace OnlineBookstore.ApplicationServices.API.Handlers.ProductHandlers
         public async Task<GetProductBySeriesResponse> Handle(GetProductBySeriesRequest request, CancellationToken cancellationToken)
         {
             var query = new GetProductBySeriesQuery()
-            {
+{
                 Series = request.ProductsSeries
             };
 
             var products = await queryExecutor.Execute(query);
-            var mappedProducts = mapper.Map<List<Product>>(products);
+            if (products == null)
+            {
+                return new GetProductBySeriesResponse()
+                {
+                    Error = new ErrorModel(ErrorType.NotFound)
+                };
+            }
+            var mappedProducts = mapper.Map<List<Domain.Models.Product>>(products);
 
             return new GetProductBySeriesResponse
             {

@@ -13,7 +13,9 @@ namespace OnlineBookstore.DataAccess.CQRS.Queries
         public int Id { get; set; }
         public override async Task<Product> Execute(BookstoreContext context)
         {
-            var product = await context.Products.FirstOrDefaultAsync(x => x.Id == this.Id);
+            var product = await context.Products
+                .Include(x => x.Reviews)
+                .FirstOrDefaultAsync(x => x.Id == this.Id);
             return product;
         }
     }

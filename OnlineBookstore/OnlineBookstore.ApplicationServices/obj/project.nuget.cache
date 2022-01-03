@@ -1,11 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "kC3pM09dSrKo70ezcgkvyqcAbBxSDNbUhNa1Hc7Zab97Vj7pQwAQSSyOcRIGvGNn7+jlWa99xaa4mnuUtNU3mQ==",
+  "dgSpecHash": "h+uFMdFZolPY/clIjApIDGV03fU+Al9guF1KE4jiveJ8B61KmY64FPHda6c5Ye+4TliQas93cm4TNqOXRAWjlg==",
   "success": true,
   "projectFilePath": "C:\\Repos\\github\\OnlineBookstore\\OnlineBookstore\\OnlineBookstore.ApplicationServices\\OnlineBookstore.ApplicationServices.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mateu\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\mateu\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",
+    "C:\\Users\\mateu\\.nuget\\packages\\fluentvalidation\\9.5.1\\fluentvalidation.9.5.1.nupkg.sha512",
+    "C:\\Users\\mateu\\.nuget\\packages\\fluentvalidation.aspnetcore\\9.5.1\\fluentvalidation.aspnetcore.9.5.1.nupkg.sha512",
+    "C:\\Users\\mateu\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\9.5.1\\fluentvalidation.dependencyinjectionextensions.9.5.1.nupkg.sha512",
     "C:\\Users\\mateu\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512",
     "C:\\Users\\mateu\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\9.0.0\\mediatr.extensions.microsoft.dependencyinjection.9.0.0.nupkg.sha512",
     "C:\\Users\\mateu\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

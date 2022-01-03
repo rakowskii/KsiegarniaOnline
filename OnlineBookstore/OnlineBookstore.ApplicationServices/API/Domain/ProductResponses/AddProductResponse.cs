@@ -8,7 +8,7 @@ using OnlineBookstore.ApplicationServices.API.Domain.Models;
 
 namespace OnlineBookstore.ApplicationServices.API.Domain.ProductResponses
 {
-    class AddProductResponse : ResponseBase<Product>
+    public class AddProductResponse : ResponseBase<Product>
     {
     }
 }

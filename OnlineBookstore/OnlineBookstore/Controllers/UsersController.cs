@@ -5,64 +5,62 @@ using System.Linq;
 using System.Threading.Tasks;
 using MediatR;
 using OnlineBookstore.ApplicationServices.API.Domain.UserRequests;
+using OnlineBookstore.ApplicationServices.API.Domain.ReviewRequests;
+using OnlineBookstore.ApplicationServices.API.Domain.ReviewResponses;
+using OnlineBookstore.ApplicationServices.API.Domain.UserResponses;
 
 namespace OnlineBookstore.Controllers
 {
 
     [ApiController]
     [Route("[controller]")]
-    public class UsersController : ControllerBase
+    public class UsersController : ApiControllerBase
     {
-        private readonly IMediator mediator;
+        
 
 
-        public UsersController(IMediator mediator)
+        public UsersController(IMediator mediator) : base(mediator)
         {
-            this.mediator = mediator;
         }
 
         [HttpGet]
         [Route("GetById/{id}")]
-        public async Task<IActionResult> GetById([FromRoute] int id)
+        public Task<IActionResult> GetById([FromRoute] int id)
         {
             var request = new GetUserByIdRequest
             {
                UserId = id
             };
 
-            var response = await mediator.Send(request);
-            return Ok(response);
+            return this.HandleRequest<GetUserByIdRequest, GetUserByIdResponse>(request);
         }
 
         [HttpGet]
         [Route("GetByLogin/{login}")]
-        public async Task<IActionResult> GetByLogin([FromRoute] string login)
+        public Task<IActionResult> GetByLogin([FromRoute] string login)
         {
             var request = new GetUserByLoginRequest
             {
                Login = login
             };
 
-            var response = await mediator.Send(request);
-            return Ok(response);
+            return this.HandleRequest<GetUserByLoginRequest, GetUserByLoginResponse>(request);
         }
 
         [HttpGet]
         [Route("GetAllUsers")]
-        public async Task<IActionResult> GetAllUsers([FromQuery] GetAllUsersRequest request)
+        public Task<IActionResult> GetAllUsers([FromQuery] GetAllUsersRequest request)
         {
-            var response = await mediator.Send(request);
-            return Ok(response);
+            return this.HandleRequest<GetAllUsersRequest, GetAllUsersResponse>(request);
         }
           
 
 
         [HttpPost]
         [Route("AddUser")]
-        public async Task<IActionResult> AddUser([FromBody] AddUserRequest request)
+        public Task<IActionResult> AddUser([FromBody] AddUserRequest request)
         {
-            var response = await mediator.Send(request);
-            return Ok(response);
+            return this.HandleRequest<AddUserRequest, AddUserResponse>(request);
         }
 
     }
