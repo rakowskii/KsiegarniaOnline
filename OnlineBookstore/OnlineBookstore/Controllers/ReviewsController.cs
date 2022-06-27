@@ -17,7 +17,6 @@ namespace OnlineBookstore.Controllers
     public class ReviewsController : ApiControllerBase
     {
         
-
         public ReviewsController(IMediator mediator) : base(mediator)
         {
         }
@@ -41,7 +40,6 @@ namespace OnlineBookstore.Controllers
             return this.HandleRequest<GetReviewByAddTimeRequest, GetReviewByAddTimeResponse>(request);
         }
 
-
         [HttpGet]
         [Route("GetByProductTitleAndCover/{title}/{cover}")]
         public Task<IActionResult> GetReviewByProductTitle([FromRoute] string title, Product.Covers cover)
@@ -53,7 +51,6 @@ namespace OnlineBookstore.Controllers
             };
             return this.HandleRequest<GetReviewByProductTitleAndCoverRequest, GetReviewByProductTitleAndCoverResponse>(request);
         }
-
 
         [HttpGet]
         [Route("GetByUserLogin/{login}")]
@@ -92,8 +89,5 @@ namespace OnlineBookstore.Controllers
             };
             return this.HandleRequest<DeleteReviewByIdRequest, DeleteReviewByIdResponse>(request);
         }
-
-
     }
 }
-

@@ -17,8 +17,6 @@ namespace OnlineBookstore.Controllers
     public class UsersController : ApiControllerBase
     {
         
-
-
         public UsersController(IMediator mediator) : base(mediator)
         {
         }
@@ -54,16 +52,11 @@ namespace OnlineBookstore.Controllers
             return this.HandleRequest<GetAllUsersRequest, GetAllUsersResponse>(request);
         }
           
-
-
         [HttpPost]
         [Route("AddUser")]
         public Task<IActionResult> AddUser([FromBody] AddUserRequest request)
         {
             return this.HandleRequest<AddUserRequest, AddUserResponse>(request);
         }
-
     }
-}
-            
-
+}           

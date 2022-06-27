@@ -33,30 +33,11 @@
                 .HasConversion<string>()
                 .HasMaxLength(20);
 
-
             modelBuilder
                 .Entity<Product>()
                 .Property(x => x.Type)
                 .HasConversion<string>()
                 .HasMaxLength(50);
-
-           
         }
-
-
-
     }
-
-}
-
-
-      
-
-
-
-
-
-
-
-
-
+}   

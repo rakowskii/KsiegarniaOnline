@@ -17,7 +17,4 @@ namespace OnlineBookstore.DataAccess.CQRS.Commands.Products
             return this.Parameter;
         }
     }
-}
-       
-            
-        
+}                          

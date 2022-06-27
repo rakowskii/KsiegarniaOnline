@@ -3,8 +3,8 @@
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    
-    
+
+
     public class Product : EntityBase
     {
         [Required]
@@ -18,10 +18,9 @@
         [MaxLength(50)]
         public string Publisher { get; set; }
 
-        
         public int Year { get; set; }
 
-        [Range(1,1000)]
+        [Range(1, 1000)]
         public int Pages { get; set; }
 
         [Required]
@@ -31,7 +30,6 @@
         [DataType(DataType.Currency)]
         public decimal Price { get; set; }
 
-       
         [DataType(DataType.ImageUrl)]
         public string ImageUrl { get; set; }
 
@@ -51,48 +49,30 @@
         [Required]
         [DataType(DataType.Text)]
         public Categories Category { get; set; }
-        
+
         [Required]
         [DataType(DataType.Text)]
         public Covers Cover { get; set; }
         public List<Review> Reviews { get; set; }
 
-        public enum Types 
+        public enum Types
         {
             Książka,
             Czasopismo,
             Komiks
         }
 
-        public enum Categories 
+        public enum Categories
         {
             Fantastyka,
             Kryminał,
             Historia,
-            
         }
 
-        public enum Covers 
+        public enum Covers
         {
-           Miękka,
-           Twarda
+            Miękka,
+            Twarda
         }
-
-
-
-
-
-
-
-
-
     }
-
-
-
-
-
-
-
-
 }

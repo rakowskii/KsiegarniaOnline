@@ -13,7 +13,7 @@ namespace OnlineBookstore.DataAccess.CQRS.Commands
         {
             await context.Products.AddAsync(Parameter);
             await context.SaveChangesAsync();
-            return this.Parameter;
+            return Parameter;
         }
     }
 }

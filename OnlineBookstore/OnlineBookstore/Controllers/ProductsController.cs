@@ -99,7 +99,6 @@ namespace OnlineBookstore.Controllers
             return this.HandleRequest<GetProductByBeingBestsellerRequest, GetProductByBeingBestsellerResponse>(request);
         }
 
-
         [HttpGet]
         [Route("GetByBeingInStock")]
 
@@ -107,7 +106,6 @@ namespace OnlineBookstore.Controllers
         {
             return this.HandleRequest<GetProductByBeingInStockRequest, GetProductByBeingInStockResponse>(request);
         }
-
 
         [HttpGet]
         [Route("GetByCover/{cover}")]
@@ -163,9 +161,7 @@ namespace OnlineBookstore.Controllers
         public Task<IActionResult> AddProduct([FromBody] AddProductRequest request)
         {
             return this.HandleRequest<AddProductRequest, AddProductResponse>(request);
-        }
-            
-
+        }           
 
         [HttpDelete]
         [Route("DeleteById/{productId}")]
@@ -185,23 +181,5 @@ namespace OnlineBookstore.Controllers
             productId = request.Id;
             return this.HandleRequest<UpdateProductRequest, UpdateProductResponse>(request);
         }
-
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

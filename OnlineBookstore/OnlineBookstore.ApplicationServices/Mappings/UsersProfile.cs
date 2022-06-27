@@ -23,8 +23,6 @@ namespace OnlineBookstore.ApplicationServices.Mappings
                 .ForMember(x => x.Login, y => y.MapFrom(z => z.Login))
                 .ForMember(x => x.Password, y => y.MapFrom(z => z.Password))
                 .ForMember(x => x.Roles, y => y.MapFrom(z => z.Roles));
-                
-
         }
     }
-}
+}              
