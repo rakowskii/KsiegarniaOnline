@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "K9JP4h1rH+IyflTAxwkAXWFPbzDM3CWy2UKQ/TUcA1FG5P7XLbKrsL6Dl432OzxlwoBXhmw3b32FDL1RdLmTGQ==",
+  "dgSpecHash": "79k9mFbCp3/q0v3sllcwPRWuWr6HiGR3LVg0AfM+PwNOf6oumjavoPJbmThGtZ//GHeew6Dsv3aXMvyO3UJGUQ==",
   "success": true,
-  "projectFilePath": "C:\\Repos\\github\\OnlineBookstore\\OnlineBookstore\\OnlineBookstore.DataAccess\\OnlineBookstore.DataAccess.csproj",
+  "projectFilePath": "C:\\Users\\mateu\\source\\repos\\OnlineBookstore\\OnlineBookstore\\OnlineBookstore\\OnlineBookstore.DataAccess\\OnlineBookstore.DataAccess.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mateu\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\mateu\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "h+uFMdFZolPY/clIjApIDGV03fU+Al9guF1KE4jiveJ8B61KmY64FPHda6c5Ye+4TliQas93cm4TNqOXRAWjlg==",
+  "dgSpecHash": "KHNijtYpIewFRbIMBkwtY3pK5BzQvHmF7oAKzeFcjE9uuJCApKF73vyWrkhaWYo6XMCe6lpOMTdhP3UaaoRFdw==",
   "success": true,
-  "projectFilePath": "C:\\Repos\\github\\OnlineBookstore\\OnlineBookstore\\OnlineBookstore.ApplicationServices\\OnlineBookstore.ApplicationServices.csproj",
+  "projectFilePath": "C:\\Users\\mateu\\source\\repos\\OnlineBookstore\\OnlineBookstore\\OnlineBookstore\\OnlineBookstore.ApplicationServices\\OnlineBookstore.ApplicationServices.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mateu\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\mateu\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",
