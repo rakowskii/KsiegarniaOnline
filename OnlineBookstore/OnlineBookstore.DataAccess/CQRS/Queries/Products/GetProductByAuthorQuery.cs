@@ -18,6 +18,5 @@ namespace OnlineBookstore.DataAccess.CQRS.Queries.Products
                 .ToListAsync();
             return await product;
         }
-
     }
 }

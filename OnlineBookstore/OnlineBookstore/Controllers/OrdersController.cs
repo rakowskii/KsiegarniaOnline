@@ -1,13 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using MediatR;
+﻿using MediatR;
+using Microsoft.AspNetCore.Mvc;
 using OnlineBookstore.ApplicationServices.API.Domain.OrderRequests;
-using OnlineBookstore.ApplicationServices.API.Domain.ReviewRequests;
-using OnlineBookstore.ApplicationServices.API.Domain.ReviewResponses;
 using OnlineBookstore.ApplicationServices.API.Domain.OrderResponses;
+using System;
+using System.Threading.Tasks;
 
 namespace OnlineBookstore.Controllers
 {
@@ -16,11 +12,10 @@ namespace OnlineBookstore.Controllers
     public class OrdersController : ApiControllerBase
     {
         
-
         public OrdersController(IMediator mediator) : base(mediator)
         {
         }
-            
+           
 
         [HttpGet]
         [Route("GetAllOrders")]
@@ -28,7 +23,6 @@ namespace OnlineBookstore.Controllers
         {
             return this.HandleRequest<GetAllOrdersRequest, GetAllOrdersResponse>(request);
         }
-
 
         [HttpGet]
         [Route("GetById/{id}")]
@@ -41,7 +35,6 @@ namespace OnlineBookstore.Controllers
             return this.HandleRequest<GetOrderByIdRequest, GetOrderByIdResponse>(request);
         }
 
-
         [HttpGet]
         [Route("GetByUserLogin/{login}")]
         public Task<IActionResult> GetOrderByUserLogin([FromRoute] string login)
@@ -52,7 +45,6 @@ namespace OnlineBookstore.Controllers
             };
             return this.HandleRequest<GetOrderByUserLoginRequest, GetOrderByUserLoginResponse>(request);
         }
-
 
         [HttpGet]
         [Route("GetByPlacedTime/{From}/{To}")]
@@ -65,7 +57,6 @@ namespace OnlineBookstore.Controllers
             };
             return this.HandleRequest<GetOrderByPlacedTimeRequest, GetOrderByPlacedTimeResponse>(request);
         }
-
 
         [HttpGet]
         [Route("GetByTotalPrice/{from}/{to}")]
@@ -80,10 +71,3 @@ namespace OnlineBookstore.Controllers
         }
     }
 }
-       
-
-
-
-
-
-

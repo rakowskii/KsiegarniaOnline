@@ -9,16 +9,16 @@ namespace OnlineBookstore.DataAccess
 {
     public class QueryExecutor : IQueryExecutor
     {
-        private readonly BookstoreContext context;
+        private readonly BookstoreContext _context;
 
         public QueryExecutor(BookstoreContext context)
         {
-            this.context = context;
+            _context = context;
         }
 
         public Task<TResult> Execute<TResult>(QueryBase<TResult> query)
         {
-            return query.Execute(this.context);
+            return query.Execute(_context);
         }
     }
 }

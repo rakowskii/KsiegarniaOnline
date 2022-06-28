@@ -11,9 +11,9 @@ namespace OnlineBookstore.DataAccess.CQRS.Commands.Products
     {
         public override async Task<Product> Execute(BookstoreContext context)
         {
-            context.Products.Update(this.Parameter);
+            context.Products.Update(Parameter);
             await context.SaveChangesAsync();
-            return this.Parameter;
+            return Parameter;
         }
     }
 }

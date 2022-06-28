@@ -2,8 +2,6 @@
 using Microsoft.AspNetCore.Mvc;
 using OnlineBookstore.ApplicationServices.API.Domain;
 using OnlineBookstore.ApplicationServices.API.ErrorHandling;
-using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
@@ -12,30 +10,29 @@ namespace OnlineBookstore.Controllers
 {
     public abstract class ApiControllerBase : ControllerBase
     {
-        protected readonly IMediator mediator;
+        protected readonly IMediator _mediator;
         protected ApiControllerBase(IMediator mediator)
         {
-            this.mediator = mediator;
+            _mediator = mediator;
         }
 
         protected async Task<IActionResult> HandleRequest<TRequest, TResponse>(TRequest request)
             where TRequest : IRequest<TResponse>
             where TResponse : ErrorResponseBase
         {
-            if(!this.ModelState.IsValid)
+            if(!ModelState.IsValid)
             {
-                return this.BadRequest(
-                    this.ModelState
+                return BadRequest(ModelState
                     .Where(x => x.Value.Errors.Any())
                     .Select(x => new { property = x.Key, errors = x.Value.Errors }));
             }
-            var response = await this.mediator.Send(request);
+            var response = await _mediator.Send(request);
             if (response.Error != null)
             {
-                return this.ErrorResponse(response.Error);
+                return ErrorResponse(response.Error);
             }
 
-            return this.Ok(response);
+            return Ok(response);
         }
 
         private IActionResult ErrorResponse(ErrorModel errorModel)
@@ -65,7 +62,6 @@ namespace OnlineBookstore.Controllers
                 default:
                     return HttpStatusCode.BadRequest; // return 400 
             }
-
         }
     }
 }

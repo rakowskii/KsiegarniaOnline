@@ -26,8 +26,6 @@ namespace OnlineBookstore.ApplicationServices.Mappings
                 .ForMember(x => x.Country, y => y.MapFrom(z => z.Country))
                 .ForMember(x => x.PhoneNumber, y => y.MapFrom(z => z.PhoneNumber))
                 .ForMember(x => x.Email, y => y.MapFrom(z => z.Email));
-
         }
-
     }
 }

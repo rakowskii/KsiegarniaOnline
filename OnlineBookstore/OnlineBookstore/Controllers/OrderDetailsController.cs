@@ -1,11 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using MediatR;
+﻿using MediatR;
+using Microsoft.AspNetCore.Mvc;
 using OnlineBookstore.ApplicationServices.API.Domain.OrderDetailsRequests;
 using OnlineBookstore.ApplicationServices.API.Domain.OrderDetailsResponses;
+using System.Threading.Tasks;
 
 namespace OnlineBookstore.Controllers
 {
@@ -13,11 +10,10 @@ namespace OnlineBookstore.Controllers
     [Route("")]
     public class OrderDetailsController : ApiControllerBase
     {
-        
 
         public OrderDetailsController(IMediator mediator) : base(mediator)
         {
-            
+
         }
 
         [HttpGet]
@@ -32,8 +28,3 @@ namespace OnlineBookstore.Controllers
         }
     }
 }
-
-
-
-
-

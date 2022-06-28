@@ -35,13 +35,4 @@ namespace OnlineBookstore.ApplicationServices.Mappings
                 .ForMember(x => x.Reviews, y => y.MapFrom(z => z.Reviews));
         }
     }
-}
-                
-                
-                
-
-               
-
-
-
-
+}                            

@@ -12,9 +12,9 @@ namespace OnlineBookstore.DataAccess.CQRS.Commands.Products
     {
         public override async Task<Product> Execute(BookstoreContext context)
         {
-            context.Products.Remove(this.Parameter);
+            context.Products.Remove(Parameter);
             await context.SaveChangesAsync();
-            return this.Parameter;
+            return Parameter;
         }
     }
 }                          

@@ -1,13 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using MediatR;
+﻿using MediatR;
+using Microsoft.AspNetCore.Mvc;
 using OnlineBookstore.ApplicationServices.API.Domain.UserRequests;
-using OnlineBookstore.ApplicationServices.API.Domain.ReviewRequests;
-using OnlineBookstore.ApplicationServices.API.Domain.ReviewResponses;
 using OnlineBookstore.ApplicationServices.API.Domain.UserResponses;
+using System.Threading.Tasks;
 
 namespace OnlineBookstore.Controllers
 {

@@ -10,7 +10,6 @@ namespace OnlineBookstore.DataAccess.Entities
         [ForeignKey("Product")]
         public int ProductId { get; set; }
         public int Amount { get; set; }
-        public decimal Price { get; set; }
-        
+        public decimal Price { get; set; }        
     }
 }

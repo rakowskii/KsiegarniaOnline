@@ -13,7 +13,7 @@ namespace OnlineBookstore.ApplicationServices.Mappings
     {
         public ProductProfile()
         {
-            this.CreateMap<DataAccess.Entities.Product, Product>()
+            CreateMap<DataAccess.Entities.Product, Product>()
                 .ForMember(x => x.Id, y => y.MapFrom(z => z.Id))
                 .ForMember(x => x.Title, y => y.MapFrom(z => z.Title))
                 .ForMember(x => x.Author, y => y.MapFrom(z => z.Author))
@@ -31,9 +31,7 @@ namespace OnlineBookstore.ApplicationServices.Mappings
                 .ForMember(x => x.Cover, y => y.MapFrom(z => z.Cover))
                 .ForMember(x => x.Reviews, y => y.MapFrom(z => z.Reviews));
 
-
-
-            this.CreateMap<AddProductRequest, DataAccess.Entities.Product>()
+            CreateMap<AddProductRequest, DataAccess.Entities.Product>()
                 .ForMember(x => x.Title, y => y.MapFrom(z => z.Title))
                 .ForMember(x => x.Author, y => y.MapFrom(z => z.Author))
                 .ForMember(x => x.Publisher, y => y.MapFrom(z => z.Publisher))
@@ -52,8 +50,6 @@ namespace OnlineBookstore.ApplicationServices.Mappings
             CreateMap<DeleteProductByIdRequest, DataAccess.Entities.Product>()
                 .ForMember(x => x.Id, y => y.MapFrom(z => z.Id));
                
-
-
             CreateMap<UpdateProductRequest, DataAccess.Entities.Product>()
                 .ForMember(x => x.Id, y => y.MapFrom(z => z.Id))
                 .ForMember(x => x.Title, y => y.MapFrom(z => z.Title))
@@ -70,12 +66,15 @@ namespace OnlineBookstore.ApplicationServices.Mappings
                 .ForMember(x => x.Type, y => y.MapFrom(z => z.Type))
                 .ForMember(x => x.Category, y => y.MapFrom(z => z.Category))
                 .ForMember(x => x.Cover, y => y.MapFrom(z => z.Cover));
-
-
-
-
-
-
         }
     }
 }
+
+
+
+
+
+
+
+
+

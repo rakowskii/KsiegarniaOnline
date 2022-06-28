@@ -11,7 +11,7 @@ namespace OnlineBookstore.ApplicationServices.API.Domain
         public string Error { get; }
         public ErrorModel(string error)
         {
-            this.Error = error;
+            Error = error;
         }
     }
 }

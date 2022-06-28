@@ -18,6 +18,5 @@ namespace OnlineBookstore.ApplicationServices.Mappings
                 .ForMember(x => x.Amount, y => y.MapFrom(z => z.Amount))
                 .ForMember(x => x.Price, y => y.MapFrom(z => z.Price));
         }
-
     }
 }
