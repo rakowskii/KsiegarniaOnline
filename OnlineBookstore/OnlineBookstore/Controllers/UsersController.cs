@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using OnlineBookstore.ApplicationServices.API.Domain.UserRequests;
 using OnlineBookstore.ApplicationServices.API.Domain.UserResponses;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace OnlineBookstore.Controllers
 {
-
+    [Authorize]
     [ApiController]
     [Route("[controller]")]
     public class UsersController : ApiControllerBase

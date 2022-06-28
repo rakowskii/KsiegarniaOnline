@@ -16,12 +16,15 @@ namespace OnlineBookstore.ApplicationServices.Mappings
             CreateMap<DataAccess.Entities.User, User>()
                 .ForMember(x => x.Id, y => y.MapFrom(z => z.Id))
                 .ForMember(x => x.Login, y => y.MapFrom(z => z.Login))
-                .ForMember(x => x.Password, y => y.MapFrom(z => z.Password))
+                .ForMember(x => x.Firstname, y => y.MapFrom(z => z.FirstName))
+                .ForMember(x => x.Lastname, y => y.MapFrom(z => z.LastName))
                 .ForMember(x => x.Roles, y => y.MapFrom(z => z.Roles));
 
-            CreateMap<AddUserRequest,DataAccess.Entities.User>()
+            CreateMap<AddUserRequest, DataAccess.Entities.User>()
                 .ForMember(x => x.Login, y => y.MapFrom(z => z.Login))
                 .ForMember(x => x.Password, y => y.MapFrom(z => z.Password))
+                .ForMember(x => x.FirstName, y => y.MapFrom(z => z.Firstname))
+                .ForMember(x => x.LastName, y => y.MapFrom(z => z.Lastname))
                 .ForMember(x => x.Roles, y => y.MapFrom(z => z.Roles));
         }
     }

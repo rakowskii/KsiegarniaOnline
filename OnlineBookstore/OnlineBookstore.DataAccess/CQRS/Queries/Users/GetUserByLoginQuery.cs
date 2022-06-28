@@ -1,9 +1,5 @@
-﻿using OnlineBookstore.DataAccess.Entities;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using Microsoft.EntityFrameworkCore;
+using OnlineBookstore.DataAccess.Entities;
 using System.Threading.Tasks;
 
 namespace OnlineBookstore.DataAccess.CQRS.Queries.Users

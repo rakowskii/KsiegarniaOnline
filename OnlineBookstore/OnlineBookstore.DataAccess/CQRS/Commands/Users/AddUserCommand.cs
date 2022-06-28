@@ -14,8 +14,6 @@ namespace OnlineBookstore.DataAccess.CQRS.Commands.Users
             await context.Users.AddAsync(Parameter);
             await context.SaveChangesAsync();
             return Parameter;
-
-
         }
     }
 }
