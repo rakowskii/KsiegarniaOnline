@@ -10,6 +10,6 @@ namespace OnlineBookstore.ApplicationServices.API.Domain.UserRequests
 {
     public class GetUserByLoginRequest : IRequest<GetUserByLoginResponse>
     {
-        public string Login { get; set; }
+        public string Username { get; set; }
     }
 }

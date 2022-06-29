@@ -8,10 +8,10 @@ namespace OnlineBookstore.DataAccess.CQRS.Queries
 {
     public class GetReviewByUserLoginQuery : QueryBase<List<Review>>
     {
-        public string Login { get; set; }
+        public string Username { get; set; }
         public override async Task<List<Review>> Execute(BookstoreContext context)
         {
-            var reviews = context.Reviews.Where(x => x.Users.Login == Login).ToListAsync();
+            var reviews = context.Reviews.Where(x => x.Users.Username == Username).ToListAsync();
             return await reviews;
         }
     }

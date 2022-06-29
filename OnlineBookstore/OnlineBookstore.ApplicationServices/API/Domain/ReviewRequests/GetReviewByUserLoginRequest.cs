@@ -5,6 +5,6 @@ namespace OnlineBookstore.ApplicationServices.API.Domain.ReviewRequests
 {
     public class GetReviewByUserLoginRequest : IRequest<GetReviewByUserLoginResponse>
     {
-        public string Login { get; set; }
+        public string Username { get; set; }
     }
 }

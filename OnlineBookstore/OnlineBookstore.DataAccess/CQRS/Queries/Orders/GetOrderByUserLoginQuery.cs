@@ -8,10 +8,10 @@ namespace OnlineBookstore.DataAccess.CQRS.Queries.Orders
 {
     public class GetOrderByUserLoginQuery : QueryBase<List<Order>>
     {
-        public string Login { get; set; }
+        public string Username { get; set; }
         public override async Task<List<Order>> Execute(BookstoreContext context)
         {
-            return await context.Orders.Where(x => x.Users.Login == Login).ToListAsync();
+            return await context.Orders.Where(x => x.Users.Username == Username).ToListAsync();
         }
     }
 }

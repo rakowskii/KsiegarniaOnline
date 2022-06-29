@@ -32,7 +32,7 @@ namespace OnlineBookstore.ApplicationServices.API.Handlers.UserHandlers
             }
             var query = new GetUserByLoginQuery
             {
-                Login = request.Login
+                Username = request.Username
             };
             var user = await _queryExecutor.Execute(query);
             if (user == null)

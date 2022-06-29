@@ -10,12 +10,12 @@ namespace OnlineBookstore.DataAccess.Entities
 
         [Required]
         [MaxLength(50)]
-        public string Login { get; set; }
+        public string Username { get; set; }
 
         [Required]
         [MaxLength(50)]
         public string Password { get; set; }     
-        public Role Roles { get; set; }
+        public Role Role { get; set; }
         public List<Order> Orders { get; set; }
         public List<Review> Review { get; set; }
     }

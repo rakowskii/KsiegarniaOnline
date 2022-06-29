@@ -12,7 +12,7 @@ namespace OnlineBookstore.ApplicationServices.API.Validators
     {
         public AddUserRequestValidator()
         {
-            this.RuleFor(x => x.Login)
+            this.RuleFor(x => x.Username)
                 .MaximumLength(50)
                 .WithMessage("LOGIN_IS_TOO_LONG")
                 .NotNull();

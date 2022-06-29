@@ -6,7 +6,7 @@ namespace OnlineBookstore.ApplicationServices.API.Domain.OrderRequests
 {
     public class GetOrderByUserLoginRequest : IRequest<GetOrderByUserLoginResponse>
     { 
-        public string UserLogin { get; set; }
+        public string Username { get; set; }
     }
 }
 

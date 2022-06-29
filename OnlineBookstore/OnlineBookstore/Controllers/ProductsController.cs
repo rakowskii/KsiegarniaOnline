@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using OnlineBookstore.ApplicationServices.API.Domain.ProductRequests;
 using OnlineBookstore.ApplicationServices.API.Domain.ProductResponses;
@@ -8,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace OnlineBookstore.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("[controller]")]
     public class ProductsController : ApiControllerBase
@@ -25,6 +27,7 @@ namespace OnlineBookstore.Controllers
         {
            return this.HandleRequest<GetProductsRequest, GetProductsResponse>(request);
         }
+
 
         [HttpGet]
         [Route("GetById/{id}")]

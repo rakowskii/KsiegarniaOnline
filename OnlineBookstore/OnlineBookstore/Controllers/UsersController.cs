@@ -30,12 +30,12 @@ namespace OnlineBookstore.Controllers
         }
 
         [HttpGet]
-        [Route("GetByLogin/{login}")]
-        public Task<IActionResult> GetByLogin([FromRoute] string login)
+        [Route("GetByLogin/{username}")]
+        public Task<IActionResult> GetByLogin([FromRoute] string username)
         {
             var request = new GetUserByLoginRequest
             {
-               Login = login
+                Username = username
             };
 
             return this.HandleRequest<GetUserByLoginRequest, GetUserByLoginResponse>(request);
@@ -47,7 +47,8 @@ namespace OnlineBookstore.Controllers
         {
             return this.HandleRequest<GetAllUsersRequest, GetAllUsersResponse>(request);
         }
-          
+         
+        [AllowAnonymous]
         [HttpPost]
         [Route("AddUser")]
         public Task<IActionResult> AddUser([FromBody] AddUserRequest request)

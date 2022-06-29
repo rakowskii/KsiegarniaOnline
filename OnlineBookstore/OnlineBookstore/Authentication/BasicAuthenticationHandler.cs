@@ -20,7 +20,6 @@ namespace OnlineBookstore.Authentication
         private readonly IQueryExecutor _queryExecutor;
 
         public BasicAuthenticationHandler(
-        
             IOptionsMonitor<AuthenticationSchemeOptions> options,
             ILoggerFactory logger,
             UrlEncoder encoder,
@@ -30,48 +29,48 @@ namespace OnlineBookstore.Authentication
         {
             _queryExecutor = queryExecutor;
         }
-        
+
         protected override async Task<AuthenticateResult> HandleAuthenticateAsync()
         {
             var endpoint = Context.GetEndpoint();
-            if(endpoint?.Metadata?.GetMetadata<IAllowAnonymous>() != null)
+            if (endpoint?.Metadata?.GetMetadata<IAllowAnonymous>() != null)
             {
                 return AuthenticateResult.NoResult();
             }
+
             if (!Request.Headers.ContainsKey("Authorization"))
             {
                 return AuthenticateResult.Fail("Missing Authorization Header");
             }
 
-            User user;
+            User user = null;
             try
             {
                 var authHeader = AuthenticationHeaderValue.Parse(Request.Headers["Authorization"]);
                 var credentialBytes = Convert.FromBase64String(authHeader.Parameter);
                 var credentials = Encoding.UTF8.GetString(credentialBytes).Split(new[] { ':' }, 2);
-                var login = credentials[0];
-                var passowrd = credentials[1];
+                var username = credentials[0];
+                var password = credentials[1];
                 var query = new GetUserByLoginQuery()
                 {
-                    Login = login
+                    Username = username
                 };
                 user = await _queryExecutor.Execute(query);
 
-                if(user == null || user.Password != passowrd)
+                
+                if (user == null || user.Password != password)
                 {
                     return AuthenticateResult.Fail("Invalid Authorization Header");
                 }
             }
-            catch 
+            catch
             {
                 return AuthenticateResult.Fail("Invalid Authorization Header");
             }
 
-            var claims = new[]
-            {
+            var claims = new[] {
                 new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
-                new Claim(ClaimTypes.Name, user.Login),
-                new Claim(ClaimTypes.Role, user.Roles.ToString())
+                new Claim(ClaimTypes.Name, user.Username),
             };
             var identity = new ClaimsIdentity(claims, Scheme.Name);
             var principal = new ClaimsPrincipal(identity);

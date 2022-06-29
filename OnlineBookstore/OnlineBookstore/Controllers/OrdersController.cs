@@ -36,12 +36,12 @@ namespace OnlineBookstore.Controllers
         }
 
         [HttpGet]
-        [Route("GetByUserLogin/{login}")]
-        public Task<IActionResult> GetOrderByUserLogin([FromRoute] string login)
+        [Route("GetByUserLogin/{username}")]
+        public Task<IActionResult> GetOrderByUserLogin([FromRoute] string username)
         {
             var request = new GetOrderByUserLoginRequest
             {
-                UserLogin = login
+                Username = username
             };
             return this.HandleRequest<GetOrderByUserLoginRequest, GetOrderByUserLoginResponse>(request);
         }

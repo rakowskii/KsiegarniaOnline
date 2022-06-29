@@ -6,11 +6,11 @@ namespace OnlineBookstore.DataAccess.CQRS.Queries.Users
 {
     public class GetUserByLoginQuery : QueryBase<User>
     {
-        public string Login { get; set; }
+        public string Username { get; set; }
 
         public override async Task<User> Execute(BookstoreContext context)
         {
-            return await context.Users.FirstOrDefaultAsync(x => x.Login == Login);
+            return await context.Users.FirstOrDefaultAsync(x => x.Username == Username);
         }
     }
 }

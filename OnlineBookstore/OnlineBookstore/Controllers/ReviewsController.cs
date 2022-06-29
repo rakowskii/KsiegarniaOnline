@@ -49,12 +49,12 @@ namespace OnlineBookstore.Controllers
         }
 
         [HttpGet]
-        [Route("GetByUserLogin/{login}")]
-        public Task<IActionResult> GetReviewByUserLogin([FromRoute] string login)
+        [Route("GetByUserLogin/{username}")]
+        public Task<IActionResult> GetReviewByUserLogin([FromRoute] string username)
         {
             var request = new GetReviewByUserLoginRequest
             {
-                Login = login
+                Username = username
             };
             return this.HandleRequest<GetReviewByUserLoginRequest, GetReviewByUserLoginResponse>(request);
         }

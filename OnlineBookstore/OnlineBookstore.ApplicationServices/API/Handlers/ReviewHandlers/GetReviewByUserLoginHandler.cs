@@ -27,7 +27,7 @@ namespace OnlineBookstore.ApplicationServices.API.Handlers
         {
             var query = new GetReviewByUserLoginQuery
             {
-                Login = request.Login
+                Username = request.Username
             };
             var reviews = await queryExecutor.Execute(query);
             if (reviews == null)

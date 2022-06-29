@@ -27,7 +27,7 @@ namespace OnlineBookstore.ApplicationServices.API.Handlers.OrderHandlers
         {
             var query = new GetOrderByUserLoginQuery
             {
-                Login = request.UserLogin
+                Username = request.Username
             };
             var order = await queryExecutor.Execute(query);
             if (order == null)
