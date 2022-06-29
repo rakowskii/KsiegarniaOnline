@@ -8,9 +8,9 @@ namespace OnlineBookstore.DataAccess.CQRS.Queries.Users
     {
         public string Username { get; set; }
 
-        public override async Task<User> Execute(BookstoreContext context)
+        public override Task<User> Execute(BookstoreContext context)
         {
-            return await context.Users.FirstOrDefaultAsync(x => x.Username == Username);
+            return  context.Users.FirstOrDefaultAsync(x => x.Username == Username);
         }
     }
 }

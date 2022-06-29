@@ -17,7 +17,7 @@ namespace OnlineBookstore.Authentication
 {
     public class BasicAuthenticationHandler : AuthenticationHandler<AuthenticationSchemeOptions>
     {
-        private readonly IQueryExecutor _queryExecutor;
+        private readonly IQueryExecutor queryExecutor;
 
         public BasicAuthenticationHandler(
             IOptionsMonitor<AuthenticationSchemeOptions> options,
@@ -27,11 +27,12 @@ namespace OnlineBookstore.Authentication
             IQueryExecutor queryExecutor)
             : base(options, logger, encoder, clock)
         {
-            _queryExecutor = queryExecutor;
+            this.queryExecutor = queryExecutor;
         }
 
         protected override async Task<AuthenticateResult> HandleAuthenticateAsync()
         {
+            // skip authentication if endpoint has [AllowAnonymous] attribute
             var endpoint = Context.GetEndpoint();
             if (endpoint?.Metadata?.GetMetadata<IAllowAnonymous>() != null)
             {
@@ -55,9 +56,9 @@ namespace OnlineBookstore.Authentication
                 {
                     Username = username
                 };
-                user = await _queryExecutor.Execute(query);
+                user = await this.queryExecutor.Execute(query);
 
-                
+                // TODO: HASH!
                 if (user == null || user.Password != password)
                 {
                     return AuthenticateResult.Fail("Invalid Authorization Header");
@@ -78,4 +79,4 @@ namespace OnlineBookstore.Authentication
             return AuthenticateResult.Success(ticket);
         }
     }
-}              
+}

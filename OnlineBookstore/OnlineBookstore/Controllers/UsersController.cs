@@ -23,7 +23,7 @@ namespace OnlineBookstore.Controllers
         {
             var request = new GetUserByIdRequest
             {
-               UserId = id
+                UserId = id
             };
 
             return this.HandleRequest<GetUserByIdRequest, GetUserByIdResponse>(request);
@@ -47,7 +47,7 @@ namespace OnlineBookstore.Controllers
         {
             return this.HandleRequest<GetAllUsersRequest, GetAllUsersResponse>(request);
         }
-         
+
         [AllowAnonymous]
         [HttpPost]
         [Route("AddUser")]
